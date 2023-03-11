@@ -1,21 +1,25 @@
-function add(nums) {
+const add = function(nums) {
 	return nums.reduce((currentSum, num) => {
 		return currentSum + num;
 	}, 0);
 }
 
-function subtract(nums) {
+const subtract = function(nums) {
 	return nums.reduce((currentSum, num) => {
 		return currentSum - num;
 	});
 } 
 
-function multiply(a,b) {
+const multiply = function(a,b) {
 	return a*b;
 }
 
-function divide(a,b) {
+const divide = function(a,b) {
 	return a/b;
 }
 
-console.log(divide(10,10));
+const operate = function(operator, ...oparands) {
+	console.log(divide(10,10));
+}
+
+console.log(operate(add,1,2));
