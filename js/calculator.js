@@ -3,10 +3,15 @@ function add(nums) {
 		return currentSum + num;
 	}, 0);
 }
+
 function subtract(nums) {
 	return nums.reduce((currentSum, num) => {
 		return currentSum - num;
 	});
+} 
+
+function multiply(a,b) {
+	return a*b;
 }
-console.log(add([1,23,12]));
-console.log(subtract([1,23,1]));
+
+console.log(multiply(10,10));
