@@ -17,4 +17,4 @@ const operate = function(operator, a, b) {
 	return operator(a,b);
 }
 
-console.log(operate(add,11,2));
+console.log(operate(multiply,11,2));

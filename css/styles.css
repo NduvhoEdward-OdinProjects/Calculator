@@ -4,3 +4,7 @@
 	box-sizing: border-box;
 	background-color: #313F45;
 }
+
+.title {
+	text-align: center;
+}
