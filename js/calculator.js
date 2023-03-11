@@ -3,5 +3,10 @@ function add(nums) {
 		return currentSum + num;
 	}, 0);
 }
-
-console.log(add([1,23]));
+function subtract(nums) {
+	return nums.reduce((currentSum, num) => {
+		return currentSum - num;
+	});
+}
+console.log(add([1,23,12]));
+console.log(subtract([1,23,1]));
