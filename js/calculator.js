@@ -13,8 +13,8 @@ const divide = function(a,b){
 	return a / b;
 }
 
-const operate = function(operator, ...oparands) {
-	console.log(divide(10,10));
+const operate = function(operator, a, b) {
+	return operator(a,b);
 }
 
-console.log(operate(add,1,2));
+console.log(operate(add,11,2));
