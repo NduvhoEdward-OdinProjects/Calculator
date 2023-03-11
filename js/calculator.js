@@ -1,21 +1,16 @@
-const add = function(nums) {
-	return nums.reduce((currentSum, num) => {
-		return currentSum + num;
-	}, 0);
+const add = function(a,b){
+	return a + b;
 }
-
-const subtract = function(nums) {
-	return nums.reduce((currentSum, num) => {
-		return currentSum - num;
-	});
+const subtract = function(a,b){
+	return a - b;
 } 
 
-const multiply = function(a,b) {
-	return a*b;
+const multiply = function(a,b){
+	return a * b;
 }
 
-const divide = function(a,b) {
-	return a/b;
+const divide = function(a,b){
+	return a / b;
 }
 
 const operate = function(operator, ...oparands) {
