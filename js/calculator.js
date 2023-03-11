@@ -14,4 +14,8 @@ function multiply(a,b) {
 	return a*b;
 }
 
-console.log(multiply(10,10));
+function divide(a,b) {
+	return a/b;
+}
+
+console.log(divide(10,10));
