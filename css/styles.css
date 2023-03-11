@@ -43,6 +43,13 @@ body {
 	background-color: #3E1010;
 	margin: 8px;
 	border-radius: 8px;
+	display: flex;
+	justify-content: flex-end; 
+	align-items: center; 
+	color: rgb(200, 200, 200);
+	font-size: 56px;
+	font-weight: bold;
+	padding-right: 8px; 
 }
 
 footer {
