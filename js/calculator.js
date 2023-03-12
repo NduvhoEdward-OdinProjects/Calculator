@@ -21,7 +21,7 @@ function updateDisplay(event) {
 }
 
 let display = document.getElementById('display');
-const buttons = document.querySelectorAll('.number');
+const buttons = document.querySelectorAll('.row > button');
 
 buttons.forEach(button => {
 	button.addEventListener('click', updateDisplay);
