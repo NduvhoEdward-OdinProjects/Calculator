@@ -16,5 +16,13 @@ const divide = function(a,b){
 const operate = function(operator, a, b) {
 	return operator(a,b);
 }
+function updateDisplay(event) {
+	console.log(event);
+}
 
 let display = document.getElementById('display');
+const buttons = document.querySelectorAll('.number');
+
+buttons.forEach(button => {
+	button.addEventListener('click', updateDisplay);
+})
