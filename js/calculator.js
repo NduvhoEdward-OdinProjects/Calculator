@@ -17,10 +17,10 @@ const operate = function(operator, a, b) {
 	return operator(a,b);
 }
 
-let displayValue = null;
+let displayValue = '';
 function updateDisplay(event) {
 	console.log(event);
-	displayValue = event.target.id; 
+	displayValue += event.target.id; 
 	display.textContent = displayValue; 
 }
 
