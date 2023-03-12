@@ -16,8 +16,12 @@ const divide = function(a,b){
 const operate = function(operator, a, b) {
 	return operator(a,b);
 }
+
+let displayValue = null;
 function updateDisplay(event) {
 	console.log(event);
+	displayValue = event.target.id; 
+	display.textContent = displayValue; 
 }
 
 let display = document.getElementById('display');
