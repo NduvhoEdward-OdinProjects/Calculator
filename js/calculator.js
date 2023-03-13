@@ -42,14 +42,15 @@ function isNumber(event) {
 function updateDisplay(event) {
 	if (isOperator(event)) { 
 		let currentOp = event.target.id;
-		operator = ops[currentOp]; 
+		let operator = ops[currentOp]; 
+		console.log(operator);
 		if(isFirstNum){
 			prevNum = currentNum;
-			currentNum = '';
+			currentNum = '0';
 			isFirstNum = false;
-		}
+		} 
 
-		currentAnswer = operate(operator, prevNum,currentNum);
+		currentAnswer = operate(operator, parseInt(prevNum),parseInt(currentNum));
 		prevNum = currentAnswer; 
 		currentNum = ''; 
 		displayValue = currentAnswer; 
@@ -58,6 +59,10 @@ function updateDisplay(event) {
 		displayValue = currentNum;
 	} else if(event.target.id=='clc'){ 
 		displayValue = '';
+		prevNum = 0;
+		currentNum = '';
+		currentAnswer = 0; 
+		isFirstNum = true;
 	} 
 	
 	display.textContent = displayValue; 
