@@ -18,41 +18,48 @@ const operate = function(operator, a, b) {
 }
 
 let displayValue = '';
-const operators = [" + ",
-				   " - ",
-				   " / ",
-				   " x "];
-let operands = [];
-let usedOps = [];
-let tempOperand = ''; 
-let tempOp = ''; 
+let prevNum = 0;
+let currentNum = '';
+let currentAnswer = 0; 
+let isFirstNum = true;
+const ops = {
+	" + ": add, 
+	" - ": subtract, 
+	" / ": divide, 
+	" * ": multiply, 
+	" = ": 'equals',
+};
 
-function isOperator(event) {
-	return operators.some(op => op==event.target.id)
+function isOperator(event) { 
+	const operators = [" + ", " - ", " / ", " * ", " = "]; 
+	return operators.includes(event.target.id)
+}
+function isNumber(event) { 
+	const numbers = ['0','1','2','3','4','5','6','7','8','9'];
+	return numbers.includes(event.target.id);
 }
 
 function updateDisplay(event) {
-	if (!isOperator){
-		tempOperand += event.target.id
-	} else {
-		operands.push(tempOperand);
-		tempOperand = '';
-		tempOp = event.target.id;
-		usedOps.push(tempOp);
-	} 
-	if (event.target.id=='clc'){
+	if (isOperator(event)) { 
+		let currentOp = event.target.id;
+		operator = ops[currentOp]; 
+		if(isFirstNum){
+			prevNum = currentNum;
+			currentNum = '';
+			isFirstNum = false;
+		}
+
+		currentAnswer = operate(operator, prevNum,currentNum);
+		prevNum = currentAnswer; 
+		currentNum = ''; 
+		displayValue = currentAnswer; 
+	} else if(isNumber(event)){
+		currentNum += event.target.id; 
+		displayValue = currentNum;
+	} else if(event.target.id=='clc'){ 
 		displayValue = '';
-		operands = [];
-		usedOps = [];
-		display.textContent = displayValue;
-		return;
-	}
+	} 
 	
-	for (let i = 0; i < operands.length; i++) {
-		//displayValue = '';
-		displayValue += operands[i]; 
-		displayValue += usedOps[i]; 
-	}
 	display.textContent = displayValue; 
 }
 
