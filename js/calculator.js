@@ -40,7 +40,7 @@ function isNumber(event) {
 	return numbers.includes(event.target.id);
 }
 
-function updateDisplay(event) {
+function update(event) {
 	if (isOperator(event)) { 
 		let currentOp = event.target.id;
 		let operator = ops[currentOp]; 
@@ -88,5 +88,5 @@ let display = document.getElementById('display');
 const buttons = document.querySelectorAll('.row > button');
 
 buttons.forEach(button => {
-	button.addEventListener('click', updateDisplay);
+	button.addEventListener('click', update);
 })
