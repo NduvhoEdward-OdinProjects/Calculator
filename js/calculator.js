@@ -106,12 +106,18 @@ buttons.forEach(button => {
 })
 
 function handleKeyPress(event) {
-  const key = event.key;
-  const element = document.getElementById(key);
-  
-  if (element) {
-    element.click();
-  }
+	const key = event.key;
+	const element = document.getElementById(key);
+	
+	if (event.key === 'Enter') {
+		document.getElementById('=').click();
+	} else if (event.key === 'Backspace') {
+		document.getElementById('del').click();
+	}
+
+	if (element) {
+    	element.click();
+  	}
 }
 
 document.addEventListener('keydown', handleKeyPress);
