@@ -86,6 +86,9 @@ function update(event) {
 	} else if (event.target.id==' +/- ') {
 		operand2 *= -1; 
 		displayValue = operand2;	
+	} else if (event.target.id=='del') {
+		operand2 = operand2.slice(0, -1);
+		displayValue = operand2;
 	}
 	
 	display.textContent = displayValue; 
