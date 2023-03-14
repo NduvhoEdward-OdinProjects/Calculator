@@ -55,6 +55,15 @@ function updateDisplay(event) {
 			prevOp = ops[currentOp];
 			return;
 		}
+		if (currentOp==' = ') {
+			currentAnswer = operate(prevOp, parseInt(operand1),parseInt(operand2));
+			operand1 = currentAnswer; 
+			prevOp = ops[currentOp];
+			operand2 = ''; 
+			displayValue = currentAnswer; 
+			display.textContent = displayValue; 
+			return;
+		}
 
 		currentAnswer = operate(prevOp, parseInt(operand1),parseInt(operand2));
 		operand1 = currentAnswer; 
