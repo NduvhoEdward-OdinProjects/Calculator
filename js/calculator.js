@@ -18,8 +18,9 @@ const operate = function(operator, a, b) {
 }
 
 let displayValue = '';
-let prevNum = 0;
-let currentNum = '';
+let operand1 = 0;
+let prevOp = '';
+let operand2 = '';
 let currentAnswer = 0; 
 let isFirstNum = true;
 const ops = {
@@ -45,22 +46,25 @@ function updateDisplay(event) {
 		let operator = ops[currentOp]; 
 		console.log(operator);
 		if(isFirstNum){
-			prevNum = currentNum;
-			currentNum = '0';
+			operand1 = operand2;
+			prevOp = ops[currentOp];
 			isFirstNum = false;
+			operand2 = '';
+			return;
 		} 
 
-		currentAnswer = operate(operator, parseInt(prevNum),parseInt(currentNum));
-		prevNum = currentAnswer; 
-		currentNum = ''; 
+		currentAnswer = operate(prevOp, parseInt(operand1),parseInt(operand2));
+		operand1 = currentAnswer; 
+		prevOp = ops[currentOp];
+		operand2 = ''; 
 		displayValue = currentAnswer; 
 	} else if(isNumber(event)){
-		currentNum += event.target.id; 
-		displayValue = currentNum;
+		operand2 += event.target.id; 
+		displayValue = operand2;
 	} else if(event.target.id=='clc'){ 
 		displayValue = '';
-		prevNum = 0;
-		currentNum = '';
+		operand1 = 0;
+		operand2 = '';
 		currentAnswer = 0; 
 		isFirstNum = true;
 	} 
