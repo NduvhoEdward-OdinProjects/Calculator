@@ -36,7 +36,7 @@ function isOperator(event) {
 	return operators.includes(event.target.id)
 }
 function isNumber(event) { 
-	const numbers = ['0','1','2','3','4','5','6','7','8','9'];
+	const numbers = ['0','1','2','3','4','5','6','7','8','9','.'];
 	return numbers.includes(event.target.id);
 }
 
@@ -56,15 +56,15 @@ function update(event) {
 			return;
 		}
 		if (currentOp==' = ') {
-			currentAnswer = operate(prevOp, parseInt(operand1),parseInt(operand2));
-			currentAnswer = parseFloat(currentAnswer.toFixed(5));
+			currentAnswer = operate(prevOp, parseFloat(operand1),parseFloat(operand2));
+			currentAnswer = parseFloat(currentAnswer.toFixed(10));
 			operand1 = currentAnswer; 
 			prevOp = ops[currentOp];
 			operand2 = ''; 
 			displayValue = currentAnswer; 
 			display.textContent = displayValue; 
 			return;
-		}
+		} 
 
 		currentAnswer = operate(prevOp, parseInt(operand1),parseInt(operand2));
 		operand1 = currentAnswer; 
@@ -80,7 +80,13 @@ function update(event) {
 		operand2 = '';
 		currentAnswer = 0; 
 		isFirstNum = true;
-	} 
+	} else if (event.target.id==' % ') {
+		operand2 /= 100; 
+		displayValue = operand2;
+	} else if (event.target.id==' +/- ') {
+		operand2 *= -1; 
+		displayValue = operand2;	
+	}
 	
 	display.textContent = displayValue; 
 }
@@ -91,3 +97,4 @@ const buttons = document.querySelectorAll('.row > button');
 buttons.forEach(button => {
 	button.addEventListener('click', update);
 })
+
