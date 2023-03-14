@@ -20,7 +20,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	min-width:450px;
+	width: 100%;
 	max-width: 500px;
 	background-color: #24907C;
 	padding: 8px;
