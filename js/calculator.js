@@ -44,7 +44,6 @@ function updateDisplay(event) {
 	if (isOperator(event)) { 
 		let currentOp = event.target.id;
 		let operator = ops[currentOp]; 
-		console.log(operator);
 		if(isFirstNum){
 			operand1 = operand2;
 			prevOp = ops[currentOp];
@@ -52,6 +51,10 @@ function updateDisplay(event) {
 			operand2 = '';
 			return;
 		} 
+		if (operand2=='') {
+			prevOp = ops[currentOp];
+			return;
+		}
 
 		currentAnswer = operate(prevOp, parseInt(operand1),parseInt(operand2));
 		operand1 = currentAnswer; 
