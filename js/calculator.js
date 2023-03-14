@@ -57,6 +57,7 @@ function update(event) {
 		}
 		if (currentOp==' = ') {
 			currentAnswer = operate(prevOp, parseInt(operand1),parseInt(operand2));
+			currentAnswer = parseFloat(currentAnswer.toFixed(5));
 			operand1 = currentAnswer; 
 			prevOp = ops[currentOp];
 			operand2 = ''; 
