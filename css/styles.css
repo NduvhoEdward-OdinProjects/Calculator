@@ -25,6 +25,7 @@ body {
 	background-color: #24907C;
 	padding: 8px;
 	margin-bottom: 16px;
+	border: 4px solid #380303;
 }
 .row {
 	display: flex;
@@ -33,7 +34,6 @@ body {
 .row > * {
 	width: 100%;
 	background-color: #210B0B;
-	margin: 4px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -57,7 +57,7 @@ body {
 }
 
 footer {
-	background-color: #fff;
+	background-color: #24907C;
 	display: flex;
 	align-items: center;
 	justify-content: center;
