@@ -13,7 +13,7 @@ body {
 }
 
 .title {
-	text-align: center;
+	color: #00ED78;
 }
 
 .calculator {
@@ -22,7 +22,7 @@ body {
 	flex: 1;
 	min-width:450px;
 	max-width: 500px;
-	background-color: #100839;
+	background-color: #24907C;
 	padding: 8px;
 	margin-bottom: 16px;
 }
@@ -32,7 +32,6 @@ body {
 }
 .row > * {
 	width: 100%;
-	height: 100%;
 	background-color: #210B0B;
 	margin: 4px;
 	display: flex;
